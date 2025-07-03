@@ -25,7 +25,7 @@
 
         <!-- google fonts -->
         <link href='http://fonts.googleapis.com/css?family=Dosis:200,300,400,500|Lato:300,400,700,900,300italic,400italic,700italic,900italic|Raleway:400,200,300,500,100|Titillium+Web:400,200,300italic,300,200italic' rel='stylesheet' type='text/css'>
-
+        <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none'><polyline points='16,20 24,8 40,12 52,20' stroke='%23111' stroke-width='2' fill='none'/><circle cx='16' cy='20' r='2' fill='%23111'/><circle cx='24' cy='8' r='2' fill='%23111'/><circle cx='40' cy='12' r='2' fill='%23111'/><circle cx='52' cy='20' r='2' fill='%23111'/><text x='12' y='50' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23111'>a</text><text x='28' y='50' font-family='Georgia, serif' font-size='32' font-weight='bold' fill='%23ff0000'>b</text></svg>" type="image/svg+xml" />
         <script src="assets/js/modernizr.js"></script>
 
     </head>
@@ -169,7 +169,7 @@
                             <figcaption>
                                 <h3>Salon coiffure</h3>
                                 <span>Bys Web</span>
-                                <a href="https://bys74.github.io/Acreation/" class="button" >Visiter</a>
+                                <a href="https://bys74.github.io/Acreation/" class="button" target="_blank" >Visiter</a>
                             </figcaption>
                         </figure>
                     </div>
@@ -179,7 +179,7 @@
                             <figcaption>
                                 <h3>Salon Reiki</h3>
                                 <span>Bys Web</span>
-                                <a href="https://bys74.github.io/Damass/" class="button" >Visiter</a>
+                                <a href="https://bys74.github.io/Damass/" class="button" target="_blank">Visiter </a>
                             </figcaption>
                         </figure>
  
@@ -263,19 +263,109 @@
                         </div>
                         <div class="col-sm-6">
                             <h2 class="con-title"></h2>
-                            <form role="form">
-                              <div class="form-group">
-                                <input type="text" class="form-control" id="user_name" placeholder="Nom Prénoms">
-                              </div>
-                              <div class="form-group">
-                                <input type="email" class="form-control" id="your_email" placeholder="Votre email">
-                              </div>
-                              <div class="form-group">
-                                <textarea name="InputMessage" id="user_message" class="form-control" rows="5" required></textarea>
-                              </div>
+<!-- Inclure EmailJS -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("tCM8yL8km_EiLxWER"); // Ton public key
+  })();
+</script>
 
-                              <button type="submit" class="btn medium">Envoyer</button>
-                            </form>   
+<!-- Formulaire -->
+<form id="contact-form">
+  <div class="form-group">
+    <input type="text" class="form-control" name="user_name" placeholder="Nom Prénoms" required>
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" name="your_email" placeholder="Votre email" required>
+  </div>
+  <div class="form-group">
+    <textarea name="user_message" class="form-control" rows="5" placeholder="Votre message" required></textarea>
+  </div>
+
+  <button type="submit" class="btn medium">Envoyer</button>
+</form>
+
+<!-- Message de retour -->
+<div id="form-message" style="display:none;"></div>
+
+<!-- Script d'envoi avec message stylé -->
+<script>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formMessage = document.getElementById('form-message');
+
+    emailjs.sendForm('service_xb1nv8k', 'template_vu0jc09', this)
+      .then(function(response) {
+        formMessage.textContent = "Message envoyé avec succès !";
+        formMessage.className = "success";
+        formMessage.style.display = "block";
+
+        // Apparition progressive
+        setTimeout(() => {
+          formMessage.style.opacity = "1";
+        }, 10);
+
+        // Reset formulaire
+        document.getElementById('contact-form').reset();
+
+        // Disparition après 4 secondes
+        setTimeout(() => {
+          formMessage.style.opacity = "0";
+          setTimeout(() => {
+            formMessage.style.display = "none";
+          }, 500);
+        }, 4000);
+      }, function(error) {
+        formMessage.textContent = "Erreur lors de l'envoi : " + error.text;
+        formMessage.className = "error";
+        formMessage.style.display = "block";
+
+        setTimeout(() => {
+          formMessage.style.opacity = "1";
+        }, 10);
+
+        // Disparition après 6 secondes
+        setTimeout(() => {
+          formMessage.style.opacity = "0";
+          setTimeout(() => {
+            formMessage.style.display = "none";
+          }, 500);
+        }, 6000);
+      });
+  });
+</script>
+
+<style>
+  #form-message {
+    margin-top: 15px;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-align: center;
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+  }
+
+  #form-message.success {
+    background-color: #4caf50;
+    color: white;
+    opacity: 1;
+  }
+
+  #form-message.error {
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+  }
+</style>
+
+
                         </div>
                     </div>
                 </div><!-- container -->
