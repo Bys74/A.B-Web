@@ -526,7 +526,7 @@ header{
 
 #testimonial {
    /* background: url(../images/bg2.jpg); */
-    padding: 80px 0px 80px 0px;
+    padding: 70px 0px 80px 0px;
     color: #fff;
     background-attachment: fixed;
     background-size: cover;
@@ -545,8 +545,7 @@ header{
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     animation: pulseGlow 3s infinite ease-in-out;
     transition: transform 0.3s ease;
-    transform-origin: center bottom;
-    
+    transform-origin: center bottom;   
     margin-top: 10px; /* Décale l’image vers le bas */
 }
 
@@ -734,6 +733,33 @@ header{
     color: #fff;
     text-decoration: underline;
 }
+
+#form-message {
+  margin-top: 15px;
+  padding: 15px 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 1.1em;
+  text-align: center;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#form-message.success {
+  background-color: #4caf50;
+  color: white;
+  opacity: 1;
+}
+
+#form-message.error {
+  background-color: #f44336;
+  color: white;
+  opacity: 1;
+}
+
 
 /* Responsive */
 @media (max-width: 768px) {
