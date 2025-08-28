@@ -1799,8 +1799,10 @@ input, select, textarea {
   width: 250px;
   height: 250px;
   object-fit: cover;
+  object-position: top; /* <- force à montrer le haut de l’image */
   transition: transform 0.3s ease;
 }
+
 
 .about-content .image.featured img:hover {
   transform: scale(1.05);
