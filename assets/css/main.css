@@ -36,7 +36,7 @@ body {
 
 header h2,
 header p {
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  text-shadow: 1px 1px 4px rgba(106, 106, 106, 0.886);
 }
 
 
@@ -93,9 +93,9 @@ input, select, textarea {
 		background: #fff;
 		font-family: 'Source Sans Pro', sans-serif;
 		font-size: 19pt;
-		font-weight: 300;
+		font-weight: 400;
 		line-height: 1.75em;
-		color: #888;
+		color: #000000;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
