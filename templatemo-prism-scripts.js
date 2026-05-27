@@ -504,19 +504,38 @@ https://templatemo.com/tm-600-prism-flux
 
         // Form submission
         const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', (e) => {
+        const formStatus = document.getElementById('formStatus');
+        const submitButton = contactForm.querySelector('.submit-btn');
+
+        contactForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            // Get form data
             const formData = new FormData(contactForm);
-            const data = Object.fromEntries(formData);
-            
-            const subject = encodeURIComponent(data.subject || 'Demande de site vitrine');
-            const body = encodeURIComponent(`Nom: ${data.name}\nEmail: ${data.email}\n\n${data.message}`);
-            window.location.href = `mailto:A.Bweb@hotmail.com?subject=${subject}&body=${body}`;
-            
-            // Reset form
-            contactForm.reset();
+
+            formStatus.textContent = 'Envoi en cours...';
+            formStatus.className = 'form-status';
+            submitButton.disabled = true;
+
+            try {
+                const response = await fetch(contactForm.action, {
+                    method: 'POST',
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (!response.ok) throw new Error('Formspree submission failed');
+
+                formStatus.textContent = 'Message envoyé. Merci, je vous répondrai rapidement.';
+                formStatus.classList.add('success');
+                contactForm.reset();
+            } catch (error) {
+                formStatus.textContent = "L'envoi a échoué. Vous pouvez me contacter directement par email.";
+                formStatus.classList.add('error');
+            } finally {
+                submitButton.disabled = false;
+            }
         });
 
         // Loading screen
