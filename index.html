@@ -1,237 +1,353 @@
-<!DOCTYPE HTML>
-
-<html>
+<!DOCTYPE html>
+<html lang="fr">
 <head>
-<title>A.B Web</title>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1, user-scalable=no" name="viewport"/>
-<!-- Font Awesome depuis le CDN -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
-<link href="assets/css/main.css" rel="stylesheet">
-<link href="assets/css/images/Logo ABW.png" rel="icon" type="image/png"/>
-</link></head>
-<body class="is-preload">
-<!-- Header -->
-<div id="header">
-<div class="top">
-<!-- Logo -->
-<div id="logo">
-<span class="image avatar48"><img alt="" src="assets/css/images/Logo ABW.png"/></span>
-<h1 id="title">Aurenche Benoit</h1>
-<p>A.B Web</p>
-</div>
-<!-- Nav -->
-<nav id="nav">
-<ul>
-<li><a href="#top" id="top-link"><span class="icon solid fa-home">Home</span></a></li>
-<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Mes réalisations</span></a></li>
-<li><a href="#about" id="about-link"><span class="icon solid fa-user">A propos de moi</span></a></li>
-<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-</ul>
-</nav>
-</div>
-<div class="bottom">
-<!-- Social Icons -->
-<ul class="icons">
-<li>
-<a class="icon brands fa-discord" href="https://discord.gg/NG85wpqMbX" target="_blank">
-<span class="label">Discord</span>
-</a>
-</li>
-<li>
-<a class="icon brands fa-instagram" href="https://instagram.com/a.b_web" target="_blank">
-<span class="label">Instagram</span>
-</a>
-</li>
-<li>
-<a class="icon solid fa-envelope" href="mailto:A.Bweb@hotmail.com">
-<span class="label">Email</span>
-</a>
-</li>
-</ul>
-</div>
-</div>
-<!-- Main -->
-<div id="main">
-<!-- Intro -->
-<section class="one dark cover" id="top">
-<div class="container">
-<header class="banner-text">
-<h2 class="alt">Hey ! Je suis <strong>Benoit</strong>, créateur de site vitrine</h2>
-</header>
-<footer>
-<a class="button scrolly" href="#portfolio">Mes réalisations</a>
-</footer>
-</div>
-</section>
-<!-- Portfolio -->
-<section class="two" id="portfolio">
-<div class="container">
-<header>
-<h2>Mes réalisations</h2>
-</header>
-<p>Découvrez mon travail à travers ces sites vitrines, réalisés pour des indépendants, petites entreprises ou projets perso. Design épuré, navigation fluide, message clair : chaque détail compte.</p>
-<div class="row">
-<div class="col-4 col-12-mobile">
-<a href="https://bys74.github.io/Acreation/" style="text-decoration: none; color: inherit;" target="_blank">
-<article class="item">
-<div class="image fit">
-<img alt="Salon de coiffure" src="assets/css/images/salon.webp"/>
-</div>
-<header>
-<h3>A.Creation coiffure</h3>
-</header>
-</article>
-</a>
-</div>
-<div class="col-4 col-12-mobile">
-<a href="https://bys74.github.io/Damass/" style="text-decoration: none; color: inherit;" target="_blank">
-<article class="item">
-<div class="image fit">
-<img alt="Salon de Reiki" src="assets/css/images/damass.png"/>
-</div>
-<header>
-<h3>Damass</h3>
-</header>
-</article>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- About Me -->
-<section class="three" id="about">
-<div class="container">
-<header>
-<h2>A propos de moi</h2>
-</header>
-<div class="about-content">
-<a class="image featured" href="javascript:void(0)">
-<img alt="photo dessinné de moi" src="assets/css/images/Moi.png"/>
-</a>
-<p>
-              L’informatique m’a toujours attiré. Ce que j’apprécie particulièrement, c’est la création de sites vitrine.
-              J’aime pouvoir allier créativité 🎨 et technique ⚙️ pour concevoir des projets à la fois esthétiques et efficaces.
-              C’est un domaine qui me passionne et dans lequel j’aime continuer à apprendre chaque jour 🚀.
-            </p>
-</div>
-</div>
-</section>
-<!-- Contact -->
-<section class="four" id="contact">
-<div class="container">
-<header>
-<h2>📬 Contact</h2>
-</header>
-<p> Une question ou un projet en tête ? N'hésitez pas à me contacter pour toute demande de devis ou d'information.</p>
-<!-- Formulaire -->
-<form id="contact-form">
-<div class="row">
-<div class="col-6 col-12-mobile">
-<input name="name" placeholder="Noms Prénoms" required="" type="text"/>
-</div>
-<div class="col-6 col-12-mobile">
-<input name="user_email" placeholder="Email" required="" type="email"/>
-</div>
-<div class="col-12">
-<textarea name="message" placeholder="Message" required=""></textarea>
-</div>
-<div class="col-12">
-<input type="submit" value="Envoyer"/>
-</div>
-</div>
-</form>
-<div id="form-message" style="margin-top:10px;color:green;"></div>
-</div>
-</section>
-</div>
-<!-- Footer -->
-<div id="footer">
-<ul class="copyright">
-<li>© Untitled. All rights reserved.</li>
-<li>Design: <a href="#">A.B Web</a></li>
-</ul>
-</div>
-<!-- Scripts -->
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/js/jquery.scrolly.min.js"></script>
-<script src="assets/js/jquery.scrollex.min.js"></script>
-<script src="assets/js/browser.min.js"></script>
-<script src="assets/js/breakpoints.min.js"></script>
-<script src="assets/js/util.js"></script>
-<script src="assets/js/main.js"></script>
-<!-- EmailJS SDK -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A.B Web - Création de sites vitrines modernes</title>
+    <meta name="description" content="A.B Web crée des sites vitrines modernes, responsive et efficaces pour indépendants, artisans, associations et petites entreprises. Design soigné, navigation fluide et contact rapide.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="A.B Web">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://bys74.github.io/A.B-Web/">
+    <link rel="icon" type="image/png" href="images/logo-abw.png">
+    <link rel="apple-touch-icon" href="images/logo-abw.png">
 
-<script>
-      function initEmailJS() {
-        emailjs.init("AxcB3z5yQmb7kyu-G"); // ta clé publique
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="A.B Web">
+    <meta property="og:title" content="A.B Web - Création de sites vitrines modernes">
+    <meta property="og:description" content="Création de sites vitrines responsive pour indépendants, artisans, associations et petites entreprises. Découvrez les réalisations clients A.B Web.">
+    <meta property="og:url" content="https://bys74.github.io/A.B-Web/">
+    <meta property="og:image" content="https://bys74.github.io/A.B-Web/images/logo-abw.png">
+    <meta property="og:image:alt" content="Logo A.B Web">
 
-        const form = document.getElementById('contact-form');
-        const msgBox = document.getElementById('form-message');
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="A.B Web - Création de sites vitrines modernes">
+    <meta name="twitter:description" content="Sites vitrines modernes, responsive et efficaces pour présenter votre activité et générer des contacts.">
+    <meta name="twitter:image" content="https://bys74.github.io/A.B-Web/images/logo-abw.png">
 
-        form.addEventListener('submit', function(event) {
-          event.preventDefault();
-
-          if (!form.querySelector('[name="time"]')) {
-            const inputTime = document.createElement('input');
-            inputTime.type = 'hidden';
-            inputTime.name = 'time';
-            inputTime.value = new Date().toLocaleString();
-            form.appendChild(inputTime);
-          }
-
-          emailjs.sendForm('service_vtuogcg', 'template_czftlie', form)
-            .then(function(response) {
-              msgBox.style.color = 'green';
-              msgBox.textContent = "✅ Message envoyé avec succès ! Merci pour votre contact.";
-              form.reset();
-            }, function(error) {
-              msgBox.style.color = 'red';
-              msgBox.textContent = "❌ Erreur lors de l'envoi. Vérifie la console pour plus d'infos.";
-              console.error(error);
-            });
-        });
-      }
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "A.B Web",
+        "url": "https://bys74.github.io/A.B-Web/",
+        "logo": "https://bys74.github.io/A.B-Web/images/logo-abw.png",
+        "image": "https://bys74.github.io/A.B-Web/images/logo-abw.png",
+        "description": "Création de sites vitrines modernes, responsive et efficaces pour indépendants, artisans, associations et petites entreprises.",
+        "email": "mailto:A.Bweb@hotmail.com",
+        "areaServed": "France",
+        "serviceType": [
+            "Création de site vitrine",
+            "Design responsive",
+            "Intégration web",
+            "Mise en ligne"
+        ],
+        "sameAs": [
+            "https://instagram.com/a.b_web"
+        ]
+    }
     </script>
-<script type="text/javascript">
-(function() {
-  document.addEventListener("DOMContentLoaded", function() {
-    // Charger le SDK EmailJS
-    var script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
-    script.onload = function() {
-      emailjs.init("AxcB3z5yQmb7kyu-G"); // ta clé publique EmailJS
+    <link rel="stylesheet" href="templatemo-prism-flux.css">
+<!-- 
 
-      const form = document.getElementById("contact-form");
-      const msgBox = document.getElementById("form-message");
+TemplateMo 600 Prism Flux
 
-      form.addEventListener("submit", function(e) {
-        e.preventDefault();
+https://templatemo.com/tm-600-prism-flux
 
-        // Champ caché "time"
-        if (!form.querySelector('[name="time"]')) {
-          const inputTime = document.createElement("input");
-          inputTime.type = "hidden";
-          inputTime.name = "time";
-          inputTime.value = new Date().toLocaleString();
-          form.appendChild(inputTime);
-        }
+-->
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loader" id="loader">
+        <div class="loader-content">
+            <div class="loader-prism">
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+                <div class="prism-face"></div>
+            </div>
+            <div style="color: var(--accent-purple); font-size: 18px; text-transform: uppercase; letter-spacing: 3px;">A.B Web se charge...</div>
+        </div>
+    </div>
 
-        emailjs.sendForm("service_vtuogcg", "template_czftlie", form)
-          .then(function() {
-            msgBox.style.color = "green";
-            msgBox.textContent = "✅ Message envoyé avec succès !";
-            form.reset();
-          })
-          .catch(function(error) {
-            console.error("EmailJS error:", error);
-            msgBox.style.color = "red";
-            msgBox.textContent = "❌ Erreur lors de l'envoi, regarde la console.";
-          });
-      });
-    };
-    document.body.appendChild(script);
-  });
-})();
-</script></body>
+    <!-- Navigation Header -->
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="#home" class="logo">
+                <div class="logo-icon">
+                    <img src="images/logo-abw.png" alt="Logo A.B Web" class="brand-mark">
+                </div>
+                <span class="logo-text">
+                    <span class="prism">A.B</span>
+                    <span class="flux">WEB</span>
+                </span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Accueil</a></li>
+                <li><a href="#about" class="nav-link">À propos</a></li>
+                <li><a href="#stats" class="nav-link">Services</a></li>
+                <li><a href="#skills" class="nav-link">Compétences</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section with 3D Carousel -->
+    <section class="hero" id="home">
+        <div class="hero-showcase">
+            <h1><span>Mes</span> <span>réalisations</span> <span>clients</span></h1>
+            <p>Sites vitrines créés pour des clients, avec une identité adaptée à chaque activité.</p>
+        </div>
+
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <!-- Carousel items will be generated by JavaScript -->
+            </div>
+            
+            <div class="carousel-controls">
+                <button class="carousel-btn" id="prevBtn">‹</button>
+                <button class="carousel-btn" id="nextBtn">›</button>
+            </div>
+            
+            <div class="carousel-indicators" id="indicators">
+                <!-- Indicators will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW: Prism Philosophy Section (About) -->
+    <section class="philosophy-section" id="about">
+        <div class="philosophy-container">
+            <div class="prism-line"></div>
+            
+            <h2 class="philosophy-headline">
+                Créer des sites vitrines<br>clairs et efficaces
+            </h2>
+            
+            <p class="philosophy-subheading">
+                Je suis Benoit, créateur de sites vitrines. Avec A.B Web, j'aide les indépendants, artisans et petites entreprises
+                à présenter leur activité avec un design propre, une navigation fluide et un message qui va droit au but.
+            </p>
+            
+            <div class="philosophy-pillars">
+                <div class="pillar">
+                    <div class="pillar-icon">◇</div>
+                    <h3 class="pillar-title">Design sur mesure</h3>
+                    <p class="pillar-description">
+                        Chaque site est pensé pour refléter votre activité, inspirer confiance et donner envie de vous contacter.
+                    </p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">⌁</div>
+                    <h3 class="pillar-title">Navigation fluide</h3>
+                    <p class="pillar-description">
+                        Structure simple, responsive mobile, contenus lisibles et parcours clair pour que vos visiteurs trouvent vite l'information.
+                    </p>
+                </div>
+                
+                <div class="pillar">
+                    <div class="pillar-icon">∞</div>
+                    <h3 class="pillar-title">Accompagnement</h3>
+                    <p class="pillar-description">
+                        De l'idée au lancement, je vous accompagne pour transformer votre besoin en vitrine professionnelle.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="philosophy-particles" id="particles">
+                <!-- Particles will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section with Content -->
+    <section class="stats-section" id="stats">
+        <div class="section-header">
+            <h2 class="section-title">Services A.B Web</h2>
+            <p class="section-subtitle">Des sites vitrines conçus pour présenter votre activité et générer des contacts</p>
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">▣</div>
+                <div class="stat-number" data-target="100">0</div>
+                <div class="stat-label">Site vitrine responsive %</div>
+                <p class="stat-description">Une présence en ligne adaptée aux ordinateurs, tablettes et mobiles, avec une mise en page soignée.</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-number" data-target="3">0</div>
+                <div class="stat-label">Étapes simples</div>
+                <p class="stat-description">Échange sur le besoin, création de la maquette, intégration et mise en ligne du site.</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">★</div>
+                <div class="stat-number" data-target="5">0</div>
+                <div class="stat-label">Réalisations visibles</div>
+                <p class="stat-description">Feeling Dance, Le Horse Box, A.Creation coiffure, Damass et Stats Rugby RCFMB montrent des univers différents, avec une identité claire pour chaque projet.</p>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">✉</div>
+                <div class="stat-number" data-target="24">0</div>
+                <div class="stat-label">Réponse rapide h</div>
+                <p class="stat-description">Une question ou un projet en tête ? Vous pouvez me contacter pour un devis ou des informations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Skills Section - Technical Arsenal -->
+    <section class="skills-section" id="skills">
+        <div class="skills-container">
+            <div class="section-header">
+                <h2 class="section-title">Compétences</h2>
+                <p class="section-subtitle">Créativité, technique et outils web pour construire une vitrine fiable</p>
+            </div>
+            
+            <div class="skill-categories">
+                <div class="category-tab active" data-category="all">Toutes les compétences</div>
+                <div class="category-tab" data-category="frontend">Front-end</div>
+                <div class="category-tab" data-category="backend">Intégration</div>
+                <div class="category-tab" data-category="cloud">Mise en ligne</div>
+                <div class="category-tab" data-category="emerging">Création</div>
+            </div>
+
+            <div class="skills-hexagon-grid" id="skillsGrid">
+                <!-- Hexagonal skill items will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="section-header">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-subtitle">Une question ou un projet en tête ? Contactez-moi pour un devis ou une information.</p>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <a href="mailto:A.Bweb@hotmail.com" class="info-item">
+                    <div class="info-icon">✉</div>
+                    <div class="info-text">
+                        <h4>Email</h4>
+                        <p>A.Bweb@hotmail.com</p>
+                    </div>
+                </a>
+                
+                <a href="https://instagram.com/a.b_web" target="_blank" class="info-item">
+                    <div class="info-icon">◎</div>
+                    <div class="info-text">
+                        <h4>Instagram</h4>
+                        <p>@a.b_web</p>
+                    </div>
+                </a>
+                
+                <a href="https://discord.gg/NG85wpqMbX" target="_blank" class="info-item">
+                    <div class="info-icon">#</div>
+                    <div class="info-text">
+                        <h4>Discord</h4>
+                        <p>Échanger directement</p>
+                    </div>
+                </a>
+            </div>
+            
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="subject">Sujet</label>
+                    <input type="text" id="subject" name="subject" value="Demande de site vitrine" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Envoyer le message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="logo-icon">
+                        <img src="images/logo-abw.png" alt="Logo A.B Web" class="brand-mark">
+                    </div>
+                    <span class="logo-text">
+                        <span class="prism">A.B</span>
+                        <span class="flux">WEB</span>
+                    </span>
+                </div>
+                <p class="footer-description">
+                    Création de sites vitrines pour indépendants, petites entreprises et projets qui ont besoin d'une présence en ligne claire.
+                </p>
+                <div class="footer-social">
+                    <a href="https://instagram.com/a.b_web" target="_blank" class="social-icon">ig</a>
+                    <a href="https://discord.gg/NG85wpqMbX" target="_blank" class="social-icon">dc</a>
+                    <a href="mailto:A.Bweb@hotmail.com" class="social-icon">@</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Services</h4>
+                <div class="footer-links">
+                    <a href="#stats">Site vitrine</a>
+                    <a href="#skills">Design responsive</a>
+                    <a href="#contact">Devis</a>
+                    <a href="#home">Réalisations</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Entreprise</h4>
+                <div class="footer-links">
+                    <a href="#about">À propos</a>
+                    <a href="#skills">Compétences</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h4>Ressources</h4>
+                <div class="footer-links">
+                    <a href="https://feeling-dance.com/" target="_blank">Feeling Dance</a>
+                    <a href="https://lehorsebox.com/" target="_blank">Le Horse Box</a>
+                    <a href="https://bys74.github.io/Acreation/" target="_blank">A.Creation</a>
+                    <a href="https://bys74.github.io/Damass/" target="_blank">Damass</a>
+                    <a href="https://analyse-rcfmb.netlify.app/" target="_blank">Stats Rugby RCFMB</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="copyright">
+                © 2026 A.B Web. Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+<script src="templatemo-prism-scripts.js"></script>
+</body>
 </html>
