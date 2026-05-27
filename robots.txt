@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bys74.github.io/A.B-Web/sitemap.xml
