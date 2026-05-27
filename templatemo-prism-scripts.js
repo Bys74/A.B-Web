@@ -478,28 +478,30 @@ https://templatemo.com/tm-600-prism-flux
         }
 
         // Intersection Observer for stats animation
-        const observerOptions = {
-            threshold: 0.5,
-            rootMargin: '0px 0px -100px 0px'
-        };
+        const statNumbers = document.querySelectorAll('.stat-number');
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const statNumbers = entry.target.querySelectorAll('.stat-number');
-                    statNumbers.forEach(number => {
-                        if (!number.classList.contains('animated')) {
-                            number.classList.add('animated');
-                            animateCounter(number);
-                        }
-                    });
-                }
+        function animateStatNumber(number) {
+            if (number.classList.contains('animated')) return;
+            number.classList.add('animated');
+            animateCounter(number);
+        }
+
+        if ('IntersectionObserver' in window) {
+            const statsObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateStatNumber(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
             });
-        }, observerOptions);
 
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            observer.observe(statsSection);
+            statNumbers.forEach(number => statsObserver.observe(number));
+        } else {
+            statNumbers.forEach(animateStatNumber);
         }
 
         // Form submission
