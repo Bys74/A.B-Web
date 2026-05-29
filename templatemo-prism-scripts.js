@@ -173,6 +173,12 @@ https://templatemo.com/tm-600-prism-flux
         }
 
         function handleCarouselClick(e) {
+            if (suppressCarouselClick) {
+                e.preventDefault();
+                e.stopPropagation();
+                return;
+            }
+
             if (e.target.closest('.card-cta') || e.target.closest('.carousel-btn') || e.target.closest('.indicator')) {
                 return;
             }
@@ -196,6 +202,95 @@ https://templatemo.com/tm-600-prism-flux
                 nextSlide();
             }
             restartCarouselAutoPlay();
+        }
+
+        let carouselPointerId = null;
+        let carouselTouchStartX = 0;
+        let carouselTouchStartY = 0;
+        let carouselIsSwiping = false;
+        let suppressCarouselClick = false;
+        const carouselSwipeIntent = 12;
+        const carouselSwipeThreshold = 50;
+
+        function isMobileCarousel() {
+            return window.matchMedia('(max-width: 768px)').matches;
+        }
+
+        function shouldIgnoreCarouselSwipe(e) {
+            return e.pointerType === 'mouse'
+                || !isMobileCarousel()
+                || e.target.closest('.card-cta')
+                || e.target.closest('.carousel-btn')
+                || e.target.closest('.indicator');
+        }
+
+        function startCarouselSwipe(e) {
+            if (shouldIgnoreCarouselSwipe(e)) {
+                return;
+            }
+
+            carouselPointerId = e.pointerId;
+            carouselTouchStartX = e.clientX;
+            carouselTouchStartY = e.clientY;
+            carouselIsSwiping = false;
+            carousel.setPointerCapture(e.pointerId);
+        }
+
+        function moveCarouselSwipe(e) {
+            if (e.pointerId !== carouselPointerId) {
+                return;
+            }
+
+            const deltaX = e.clientX - carouselTouchStartX;
+            const deltaY = e.clientY - carouselTouchStartY;
+            const absX = Math.abs(deltaX);
+            const absY = Math.abs(deltaY);
+
+            if (!carouselIsSwiping && absX > carouselSwipeIntent && absX > absY * 1.2) {
+                carouselIsSwiping = true;
+                carousel.classList.add('is-swiping');
+            }
+
+            if (carouselIsSwiping) {
+                e.preventDefault();
+            }
+        }
+
+        function endCarouselSwipe(e) {
+            if (e.pointerId !== carouselPointerId) {
+                return;
+            }
+
+            const deltaX = e.clientX - carouselTouchStartX;
+            const deltaY = e.clientY - carouselTouchStartY;
+            const swiped = carouselIsSwiping
+                && Math.abs(deltaX) >= carouselSwipeThreshold
+                && Math.abs(deltaX) > Math.abs(deltaY) * 1.2;
+
+            if (swiped) {
+                if (deltaX < 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+                restartCarouselAutoPlay();
+                suppressCarouselClick = true;
+                window.setTimeout(() => {
+                    suppressCarouselClick = false;
+                }, 350);
+            }
+
+            resetCarouselSwipe(e);
+        }
+
+        function resetCarouselSwipe(e) {
+            if (carouselPointerId !== null && carousel.hasPointerCapture(carouselPointerId)) {
+                carousel.releasePointerCapture(carouselPointerId);
+            }
+
+            carouselPointerId = null;
+            carouselIsSwiping = false;
+            carousel.classList.remove('is-swiping');
         }
 
         function updateCarousel() {
@@ -354,6 +449,10 @@ https://templatemo.com/tm-600-prism-flux
 
         // Event listeners
         carousel.addEventListener('click', handleCarouselClick);
+        carousel.addEventListener('pointerdown', startCarouselSwipe);
+        carousel.addEventListener('pointermove', moveCarouselSwipe);
+        carousel.addEventListener('pointerup', endCarouselSwipe);
+        carousel.addEventListener('pointercancel', resetCarouselSwipe);
 
         document.getElementById('nextBtn').addEventListener('click', () => {
             nextSlide();
