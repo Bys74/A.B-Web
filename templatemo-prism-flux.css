@@ -492,6 +492,7 @@ body::after {
 	height: 100%;
 	position: relative;
 	transform-style: preserve-3d;
+	touch-action: pan-y;
 }
 
 .carousel-item {
@@ -504,6 +505,10 @@ body::after {
 	transition: all 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
 	cursor: pointer;
 	transform-origin: center center;
+}
+
+.carousel.is-swiping .carousel-item {
+	cursor: grabbing;
 }
 
 .carousel-item .card {
@@ -1749,6 +1754,25 @@ a.info-item {
 .copyright {
 	color: var(--text-dim);
 	font-size: 14px;
+}
+
+.visit-counter {
+	display: inline-flex;
+	align-items: center;
+	line-height: 0;
+	opacity: 0.82;
+	transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.visit-counter:hover {
+	opacity: 1;
+	transform: translateY(-2px);
+}
+
+.visit-counter img {
+	display: block;
+	height: 20px;
+	max-width: 100%;
 }
 
 .footer-credits {
